@@ -14,6 +14,7 @@ import android.widget.TextView;
 
 public class MainFragment extends Fragment {
     private Button plusButton;
+    private int count;
     private Button minusButton;
     private Button nextFragmentButton;
     private TextView textViewCount;
@@ -29,18 +30,18 @@ public class MainFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         initView();
         initListener();
-        textViewCount.setText(String.valueOf(MainActivity.count));
+        textViewCount.setText(String.valueOf(count));
     }
 
     private void initListener() {
         plusButton.setOnClickListener(v -> {
-            MainActivity.count++;
-            textViewCount.setText(String.valueOf(MainActivity.count));
+            count++;
+            textViewCount.setText(String.valueOf(count));
         });
 
         minusButton.setOnClickListener(v -> {
-            MainActivity.count--;
-            textViewCount.setText(String.valueOf(MainActivity.count));
+            count--;
+            textViewCount.setText(String.valueOf(count));
         });
         nextFragmentButton.setOnClickListener(v -> {
             Bundle bundle = new Bundle();
